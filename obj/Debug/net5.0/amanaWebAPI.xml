@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>amanaWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:amanaWebAPI.Controllers.ClientesController.Get">
+            <summary>
+            Lista todos os cliente cadastrados
+            </summary>
+            <returns>Lista de clientes</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.ClientesController.GetById(System.Int32)">
+            <summary>
+            Busca um cliente através do seu id
+            </summary>
+            <param name="id">Id do cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.ClientesController.Post(amanaWebAPI.ViewModels.ClienteViewModel)">
+            <summary>
+            Cadastra um novo cliente
+            </summary>
+            <param name="clienteViewModel">Informações para cadastra um cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.ClientesController.Delete(System.Int32)">
+            <summary>
+            Deleta um cliente através do seu usuário
+            </summary>
+            <param name="id">Id do cliente</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.CotacoesController.Get(amanaWebAPI.ViewModels.AreaViewModel)">
+            <summary>
+            Busca todas as cotações cadastradas
+            </summary>
+            <param name="area">Area para calculo das cotações</param>
+            <returns>Uma lista de cotações</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.CotacoesController.Get(amanaWebAPI.ViewModels.AreaViewModel,System.Int32)">
+            <summary>
+            Busca todas as cotações dependendo do seu plantio
+            </summary>
+            <param name="area">Area para calculo das cotações</param>
+            <param name="id">Id to replantio</param>
+            <returns>Uma lista de cotações</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.CotacoesController.Post(amanaWebAPI.ViewModels.CotacaoViewModel)">
+            <summary>
+            Cadastra uma nova cotação
+            </summary>
+            <param name="cotacao">Dados da cotação a ser cadastrada</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.CotacoesController.Delete(System.Int32)">
+            <summary>
+            Deleta uma cotação atraves do seu id
+            </summary>
+            <param name="id">Id da cotação a ser deletada</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.PlantiosController.Post(amanaWebAPI.ViewModels.PlantioViewModel)">
+            <summary>
+            Cadastra um novo plantio
+            </summary>
+            <param name="novoPlantio">Dados do plantio a ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.PlantiosController.GetByInfo(amanaWebAPI.ViewModels.PlantioViewModel)">
+            <summary>
+            Busca um plantio Através das suas informações
+            </summary>
+            <param name="p">Informações do plantio</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.UsuariosController.Get">
+            <summary>
+            Lista todos os usuários Cadastrados
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um usuário através do Id
+            </summary>
+            <param name="id">Id do usuário que será buscado</param>
+            <returns>Um usuário em especifico</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.UsuariosController.Post(amanaWebAPI.ViewModels.UsuarioViewModel)">
+            <summary>
+            Cadastra um novo usuário do tipo Cliente
+            </summary>
+            <param name="novoUsuarioModel">Informações do novo usuario (menos seu tipo)</param>
+            <returns>Status de criado</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.UsuariosController.PostAdm(amanaWebAPI.ViewModels.UsuarioViewModel)">
+            <summary>
+            Cadastra um usuário do tipo administrador
+            </summary>
+            <param name="novoUsuarioModel">Informações do novo Administrador</param>
+            <returns>Status de Criado</returns>
+        </member>
+        <member name="M:amanaWebAPI.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuário Cadastrado
+            </summary>
+            <param name="id">Id do Usuario que será deletado</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.ListarTodos">
+            <summary>
+            Lista todos os plantios
+            </summary>
+            <returns>Lista de Plantios</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.BuscarPorInfo(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Busca um plantio através de suas informações
+            </summary>
+            <param name="idMunicipio">Id do Municipio do plantio</param>
+            <param name="idSeguradora">Id da Seguradora do plantio</param>
+            <param name="idCultura">Id da Cultura do plantio</param>
+            <param name="idNivelCobertura">Id do Nivel de Cobertura do plantio</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um plantio atraves do id
+            </summary>
+            <param name="id">id do plantio a ser buscado</param>
+            <returns>Um plantio especifico</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.Cadastrar(amanaWebAPI.Domains.Plantio)">
+            <summary>
+            Cadastra um novo Plantio
+            </summary>
+            <param name="novoPlantio">Plantio a ser cadastrado</param>
+            <returns>True or false</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um plantio
+            </summary>
+            <param name="id">id do plantio</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IPlantioRepository.Atualizar(System.Int32,amanaWebAPI.Domains.Plantio)">
+            <summary>
+            Atualiza um plantio pelo seu id
+            </summary>
+            <param name="id">id do plantio</param>
+            <param name="plantioAtualizado">Dados do plantio a ser atualizado</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.ISeguradoraRepository.ListarTodas">
+            <summary>
+            Lista todas as seguradoras cadastradas
+            </summary>
+            <returns>Uma lista de seguradoras</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.ISeguradoraRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma seguradora atraves do seu id
+            </summary>
+            <param name="id">Id da seguradora</param>
+            <returns>Lista de seguradoras</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.ISeguradoraRepository.Cadastrar(amanaWebAPI.Domains.Seguradora)">
+            <summary>
+            Cadastra uma nova Seguradora
+            </summary>
+            <param name="novaSeguradora">Dados da nova seguradora</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.ISeguradoraRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma seguradora atraves do id
+            </summary>
+            <param name="id">Id da seguradora</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.ISeguradoraRepository.Atualizar(System.Int32,amanaWebAPI.Domains.Seguradora)">
+            <summary>
+            Atualiza uma seguradora atraves do id
+            </summary>
+            <param name="id">Id da seguradora</param>
+            <param name="seguradoraAtualizada">Novos dados da seguradora</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.ListarTodos">
+            <summary>
+            Lista todos os usuarios cadastrados
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário através do seu id
+            </summary>
+            <param name="id">id do usuário</param>
+            <returns>Um usuário específico</returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.Cadastrar(amanaWebAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Dados do usuario a ser cadastrado</param>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário 
+            </summary>
+            <param name="id">id do usuário a ser deletado</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.Atualizar(System.Int32,amanaWebAPI.Domains.Usuario)">
+            <summary>
+            Atualiza os dados de um usuário
+            </summary>
+            <param name="id">id do usuário</param>
+            <param name="novoUsuario">Dados atualizados do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:amanaWebAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Autentica um usuário cadastrado
+            </summary>
+            <param name="email">Email do usuario</param>
+            <param name="senha">Senha do usuário</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
